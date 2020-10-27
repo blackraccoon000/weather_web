@@ -10,13 +10,16 @@
 <body>
   <div class="main-content">
     {{>header}}
-    <p>Use this site to get your weather!</p>
+    <p>天気予報が表示されます。下記のボックスに英語で入力してください。</p>
     <form>
-      <input placeholder="Location">
+      <input placeholder="Tokyo" >
       <button>Search</button>
     </form>
-    <p id="message-1"></p>
-    <p id="message-2"></p>
+    <div id="messageArea">
+      <p id="message-1">ここに情報が表示されます。</p>
+      <p id="message-2"></p>
+      <p id="message-3"></p>
+    </div>
   </div>
   {{>footer}}
   <script src="/js/app.js"></script>

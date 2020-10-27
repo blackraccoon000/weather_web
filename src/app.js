@@ -48,7 +48,7 @@ app.get('/help',(req,res)=>{
 app.get('/weather',(req,res)=>{
   if(!req.query.address){
     return res.send({
-      error: 'You must provide a search term',
+      error: 'サーチボックスに入力してください。',
       name: 'Yutaka Fujii'
     })
   }
@@ -62,6 +62,7 @@ app.get('/weather',(req,res)=>{
         return res.send({ error })
       }
       return res.send({
+        body:forecastData.body,
         localtime:forecastData.localtime,
         temperature:forecastData.temperature,
         feelslike:forecastData.feelslike,

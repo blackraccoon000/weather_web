@@ -23,6 +23,7 @@ const forecast = (longitude,latitude,callback) => {
       // callback(undefined,`${response.body.location.region} ${response.body.location.name}\n${response.body.location.lon},${response.body.location.lat}\n${response.body.location.localtime}\nIts currently ${response.body.current.temperature} degrees out. It feels like ${response.body.current.feelslike} degrees out.\n${response.body.current.weather_descriptions}`)
       // callback(undefined,`${body.location.localtime}\nIts currently ${body.current.temperature} degrees out. It feels like ${body.current.feelslike} degrees out.\n${body.current.weather_descriptions}`)
       const forecastArray = {
+        body,
         localtime:body.location.localtime,
         temperature:body.current.temperature,
         feelslike:body.current.feelslike,
