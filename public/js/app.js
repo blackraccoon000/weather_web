@@ -23,6 +23,14 @@ weatherForm.addEventListener('submit', (e)=>{
       messageOne.textContent = `探索エリア ${data.location}` 
       messageTwo.textContent = `取得日時 ${data.localtime}`
       messageThree.textContent = `天気 ${data.descriptions[0]}  / 気温：${data.temperature}℃　体感気温：${data.feelslike}℃`
+      
+      const canvas = document.querySelector('#canvas')
+      const ctx = canvas.getContext('2d')
+      const myImg = new Image()
+      myImg.src = data.body.current.weather_icons[0]
+      myImg.onload = () => {
+        ctx.drawImage(myImg,0,0)
+      }
     }
   })
 })
